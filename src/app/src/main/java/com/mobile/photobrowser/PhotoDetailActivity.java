@@ -1,6 +1,8 @@
 package com.mobile.photobrowser;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,5 +28,13 @@ public class PhotoDetailActivity extends AppCompatActivity {
 
         // Load the photo using Glide
         Glide.with(this).load(photoUrl).into(photoDetailView);
+
+        //Back to home
+        Button homeBtn = findViewById(R.id.btn_home);
+
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(PhotoDetailActivity.this, PhotoListActivity.class);
+            startActivity(intent);
+        });
     }
 }
