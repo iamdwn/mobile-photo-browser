@@ -16,6 +16,11 @@ import com.bumptech.glide.Glide;
 public class PhotoDetailActivity extends AppCompatActivity {
     private ImageView photoDetailView;
 
+    private int lastSelectedPosition = -1;
+//    private RecyclerView recyclerView;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +38,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
         Button homeBtn = findViewById(R.id.btn_home);
 
         homeBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(PhotoDetailActivity.this, PhotoListActivity.class);
-            startActivity(intent);
+           finish();
         });
     }
 }
